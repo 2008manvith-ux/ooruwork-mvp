@@ -13,19 +13,21 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000. For a production build, run `npm run build` then `npm start`.
+Open [http://localhost:3000](http://localhost:3000). For a production build, run `npm run build` then `npm start`.
 
 ## Demo walkthrough
 
-1. Choose **Find work**, then add a worker profile with locality, skills, availability and daily pay preference.
-2. Browse the sample listings. Open a job to review match factors or apply.
-3. Choose **Hire workers**, post a role, then review applications and update status.
-4. Visit `/faq` for common questions. Unknown routes show a custom 404 page.
+1. Choose **Find work**, then **Set up my profile**. Add a name, locality (try `Indiranagar`), practical skills (try Cooking or Packing), availability and wage preference.
+2. Browse the clearly labelled **DEMO LISTING** sample jobs. Open a job to see the match score and its reasons, or quick apply from a card.
+3. Choose **Hire workers**, post a job with one or more skills, then submit a worker application to see the applicant profile and update its status.
+4. Refresh the page: profiles, listings and applications persist in this browser on this device.
+5. Open **Frequently asked questions** in the menu or visit `/faq`. Unknown routes show the custom 404 page.
 
 ## Matching rules
 
-The deterministic match score uses skill fit (up to 45 points), exact locality (25), compatible availability (15), and meeting the worker's wage preference (15). Each factor is shown. A score helps sort opportunities, not guarantee employment.
+The displayed score is deterministic and inspectable: skill fit contributes up to 45 points, an exact locality match 25, a compatible availability 15, and meeting the worker's minimum wage preference 15. Match reason chips show which conditions were met. A score is a useful filter, not a guarantee of employment. Jobs remain browseable when no profile exists; scores appear after a worker adds skills.
 
 ## Data and scope
 
-Profiles, listings and applications use browser `localStorage` on this device only. They do not sync across browsers. Five seeded listings are labeled sample data and are not real or verified offers. There is no authentication, backend, GPS, maps, voice AI, or blocked access page in this MVP.
+This prototype uses browser `localStorage`; there is no Supabase configuration or external service dependency. Data is local to the current browser and device, so separate users/devices do not share new profiles, listings, or applications. Five sample jobs are seeded and explicitly labelled sample listings; they are not real or verified offers. The UI is English and text first. Voice, GPS, maps, authentication, and cross-device backend sync are outside this MVP. There is no blocked-access page because the prototype has no access restrictions.
+
